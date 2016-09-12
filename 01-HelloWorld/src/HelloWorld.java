@@ -4,7 +4,7 @@ import com.sun.xml.internal.bind.v2.schemagen.xmlschema.Import;
 
 //============================================================================
 // DESCRIPTION : HelloWorld.java
-// CLASS       : COSC 1337.S70
+// CLASS       : COSC 1337.S70  (INEW 2230.S01)
 // AUTHOR      : Matthew Dowell
 // DATE        : 08/22/2015
 //============================================================================
@@ -13,33 +13,47 @@ import com.sun.xml.internal.bind.v2.schemagen.xmlschema.Import;
 public class HelloWorld
 {
 		public static void main(String[] args) {
+			
 			System.out.println ( "Hello World, from Matthew!!!" );
 			
-			int answer; 
-			String firstString = "Hello World, from Matthew's String";
+			
+		//Lab 1 - Exercise 5.  
+			
+//-------------------METHOD 1 ------------------------
+			
+	String emoString = "hate"; 
+			
+				System.out.println ("The line of text to be changed is:");
+				System.out.println ("I " + emoString + " you.");
+			
+			emoString = "love"; 
+			
+				System.out.println ("I have rephrased that string to read:");
+				System.out.println ("I " + emoString + " you.");
 			
 			
-			answer = 2 + 2; 
+			System.out.println("OR - If the following was the perferred method for this exercise, here's another sample:"); 
+	
+//-------------------METHOD 2 -------------------------------------
 			
-			System.out.println (answer);
-			System.out.println ("Java is not a drink");
-			System.out.println ("You like tea");
+	String sampleSentance = "I hate these instructions as they are not very clear.";
 			
-			System.out.println (firstString + " the answer is " + answer); 
+				System.out.println(sampleSentance); 
+				System.out.println("Now, I'll find hate with the .indexOf() method of the String class, and replace 'hate' with 'love', by rebuilding the sentance with .substring() method."); 
 			
-			firstString = "I don't think you can do this";
+			int locNum = sampleSentance.indexOf("hate"); //grabs location of hate in the string	
+				
+				String endStr = sampleSentance.substring(locNum + 4); //can be an explicit '4' for the word "hate".
+				sampleSentance = sampleSentance.substring(0, locNum) + "love" + endStr; 
 			
-			System.out.println (firstString + ". Well I was wrong, you can");
+			//sampleSentance is now " I love these instructions as they are not very clear. 
 			
-			boolean test = false; 
-			
-			if(firstString == "I don't think you can do this"){
-				test = true; 
-			}else{
-				test = false; 
-			}
-			System.out.println(test);
-			
-			
+				 locNum = sampleSentance.indexOf("not"); //grabs the location of 'not' in the modified string;
+				
+				 endStr = sampleSentance.substring(locNum + "not".length() + 1); //"are".length will return a 3,  beginning the new ending at _very clear. + 1 to  delete the extra space 
+				 sampleSentance = sampleSentance.substring(0, locNum) + endStr; //reconstructs without  "not"
+				 
+				 System.out.println (sampleSentance); 
+				
 		}
 }
