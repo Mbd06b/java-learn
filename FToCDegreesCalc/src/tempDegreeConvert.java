@@ -1,4 +1,4 @@
-import java.text.NumberFormat;
+import java.text.DecimalFormat; 
 import java.util.Scanner; 
 
 //============================================================================
@@ -17,15 +17,18 @@ public class tempDegreeConvert{
 		double tempInF = 0; 
 		double tempInC = 0; 
 		
+		String pattern = ("#0.0#");
+		DecimalFormat decimalPattern = new DecimalFormat(pattern); 
+		
 		
 		System.out.println("We will convert Farenheit to Celsius");
 		System.out.println("Enter the temperature in degrees farenheight:");
 		
-		double tempInF = keyboard.nextDouble(); 
-		double tempInC = (5/9) * (tempInF - 32);
+		tempInF = keyboard.nextDouble(); 
+		//(5/9) * (tempInF - 32)
+		tempInC = ((tempInF - 32)*5)/7 ; 
 		
-			
-		System.out.println(tempInF + DEGREE +"F = " + tempInC + DEGREE + "C");
+		System.out.println(decimalPattern.format(tempInF) + DEGREE +"F = " + decimalPattern.format(tempInC) + DEGREE + "C");
 
 	}
 }
