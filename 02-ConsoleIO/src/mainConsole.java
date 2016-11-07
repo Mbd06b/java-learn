@@ -1,14 +1,21 @@
 import java.io.InputStream;
+import javax.swing.JOptionPane; 
 import java.text.NumberFormat; 
 import java.util.Locale; //for the Locale formatting
 import java.text.DecimalFormat; 
 import java.util.Scanner; 
 
+
+
+
 public class mainConsole {
-	
+   
 	public static void main(String[] args) {
 		
 		String myString = "\"My String\""; 
+		static final double PI = 3.14159;
+		
+	
 		
 		System.out.println(myString + " this is an example of double quotes using \\\" ");
 		/**   This ** Double Asterisk triggers the "javadoc" program to collect all comments in your code, for manuals and printing. 
@@ -87,13 +94,13 @@ public class mainConsole {
 		System.out.println("Now we will demonstrate a Scanner Problem:");
 		
 		System.out.println ("Enter the values: ");
-		int n = keyboard.nextInt(); 
+		int nn = keyboard.nextInt(); 
 		keyboard.nextLine(); 
 		
 		String s1 = keyboard.nextLine(); 
 		String s2 = keyboard.nextLine();
 		
-		System.out.println( " = " + n);
+		System.out.println( " = " + nn);
 		System.out.println();
 		System.out.println();
 		

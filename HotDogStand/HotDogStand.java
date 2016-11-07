@@ -68,7 +68,7 @@ public class HotDogStand {
 	}
 
 	
-//---------Hot Dog Stand CONSTRUCTOR-------------------------------
+//---------Hot Dog Stand CONSTRUCTORS-------------------------------
 //Default 
 	HotDogStand (){
 		for(int i = 0; i < (HotDog.values().length); i++){
@@ -87,6 +87,11 @@ public class HotDogStand {
 		disposeNotCalled = true;
 	}
 	
+//Custom Constructor
+	HotDogStand (String idNumber, HotDog ... hotDogs){ //variable arguments need to be the last argument.
+		//Build a Stand with set values for each type of HotDog:
+		//("Stand1", 5 Classic, 4 NewYork, 3 Chicago... ecetera, based on the value of the enumeration)
+	}
 	
 //Copy Constructor
 	HotDogStand (HotDogStand toCopy){
@@ -103,7 +108,7 @@ public class HotDogStand {
 	}
 
 	
-//Methods
+//---------------------METHODS---------------------------------------------------
 	public static int getTotalDogsSold()			 {return totalHotDogsSold;}
 	public		  int getDogOfTypeSold(HotDog option){return dogsSold[option.geti()];}
 	public	   String	   getIdNumber()		     {return idNumber;}
@@ -182,7 +187,7 @@ public class HotDogStand {
 		
 		String tempString = this.idNumber + " has sold: \n";
 		int i = 0;
-		for (HotDog d : HotDog.values()) {
+		for (HotDog d : HotDog.values()) { //this is for each syntax for enum
 		     tempString += d + ":[" + Array.getInt(dogsSold, i) + "] ";
 		     if(i < (HotDog.values().length)){
 		    	 i++;
